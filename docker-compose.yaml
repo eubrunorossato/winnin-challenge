@@ -2,11 +2,11 @@ version: '3.4'
 services:
   backend:
     build:
-      context: ./src
+      context: ./
     volumes:
-      - './src/:/app/src/'
+      - './:/app/'
     ports:
-      - '5001:3000'
+      - '3000:3000'
     depends_on:
       - 'postgres'
     networks:
