@@ -10,13 +10,6 @@
   },
   "rules": {
     "arrow-spacing": "warn",
-    "comma-dangle": [
-      "error",
-      {
-        "arrays": "never",
-        "objects": "never"
-      }
-    ],
     "no-var": "error"
   }
 }
