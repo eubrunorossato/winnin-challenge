@@ -1,0 +1,10 @@
+.editorconfig
+.eslintrc.json
+.gitignore
+.prettierrc
+docker-compose.yaml
+Dockerfile
+data
+README.md
+.git
+.dockerignore
