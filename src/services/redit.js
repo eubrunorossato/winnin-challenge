@@ -2,7 +2,7 @@ import axios from 'axios';
 import postServices from './post';
 
 export default {
-  getPerPeriod: async () => {
+  getPosts: async () => {
     try {
       const { data } = await axios.get(
         `${process.env.REDIT_URL}/r/artificial/hot`

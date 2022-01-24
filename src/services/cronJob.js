@@ -7,7 +7,7 @@ export default {
       process.env.CRON_JOB_REDDIT,
       async () => {
         console.log('started');
-        await redditService.getPerPeriod();
+        await redditService.getPosts();
       },
       null,
       true,

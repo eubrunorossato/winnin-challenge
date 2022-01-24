@@ -6,7 +6,7 @@ import { validateQuery } from './middleware/index';
 const app = Router();
 
 app.get('/redit/hot/artificial', async (req, res) => {
-  const { code, message } = await reditService.getPerPeriod();
+  const { code, message } = await reditService.getPosts();
   res.status(code).json({ message });
 });
 
