@@ -10,6 +10,12 @@ export function validateQuery(req, res, next) {
         message: 'Initial Date must be bigger than end Date',
       });
     }
+    if (!timestampInitDate || !timestampEndDate) {
+      res.status(500).json({
+        data: [],
+        message: 'Initial Date and end Date cannot be empty',
+      });
+    }
   }
   if (!order || (order !== 'ups' && order !== 'comments')) {
     res.status(500).json({
