@@ -21,3 +21,10 @@
 - Endpoint responsavel por trazer uma lista de autores com seus numeros de ups/comments relacionados ao determinado post.
 - Parametro order: Obrigatório. Type: String. Values: "ups" ou "comments".
 - Tratamento de erro caso order seja undefined ou difetente de "ups" ou "comments"
+
+# Cronjob
+- Essa é a variavel de ambiente responsável por rodar o cronjob. CRON_JOB_REDDIT='00 06 19 * * *'. Nessa configuração o cronjob rodará todo dia as 19:06:00
+- O primeiro parametro são os segundos, não vejo nescessidade de trocar pra outro numero.
+- O segundo e o terceiro parametro são os minutos e as horas. Mudem-os de acordo com a hora que estiverem testando. Obs: Eu notei um adiatamento de aproximadamente 7 segundos do cronjob pra hora do meu sistema.
+- Exemplo: Caso quando estiverem testando seja 14:03 hrs, coloque a variavel de ambiente para  CRON_JOB_REDDIT='00 04 14 * * *'
+- Quando o cronjob for chamado vc verá um "Started" no terminale logo em seguida logs da query feita para salvos os posts no banco.
