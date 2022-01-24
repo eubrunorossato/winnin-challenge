@@ -12,10 +12,11 @@ export default async () => {
       synchronize: process.env.NODE_ENV == 'LOCALHOST',
       logging: true,
       autoReconnect: true,
-      entities: ['src/models/*.js'],
+      entities: ['src/postgres/model/*.js'],
     });
     console.log('Db Connection Success!');
   } catch (error) {
+    console.log(error);
     console.log(`Error on connecting to Db: ${error}`);
   }
 };

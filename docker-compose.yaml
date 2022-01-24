@@ -9,17 +9,17 @@ services:
       - 'postgres'
     networks:
       - webnet
+
   postgres:
     image: postgres:latest
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=ADMIN1234
       - POSTGRES_DB=Winnin-DB
-    volumes:
-      - './data:/var/lib/postgresql/data/'
     ports:
       - '5432:5432'
-    restart: always
+    networks:
+      - webnet
 networks:
   webnet:
     driver: bridge
