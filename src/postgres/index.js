@@ -10,7 +10,7 @@ export default async () => {
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,
       synchronize: process.env.NODE_ENV == 'LOCALHOST',
-      logging: true,
+      logging: false,
       autoReconnect: true,
       entities: ['src/postgres/model/*.js'],
     });
