@@ -11,15 +11,6 @@ function builPostList(data, postList) {
   });
 }
 
-function formatDate(initDate, endDate) {
-  const timestampInitDate = new Date(initDate).get();
-  const timestampEndDate = new Date(endDate).get();
-  return {
-    timestampInitDate,
-    timestampEndDate,
-  };
-}
-
 const services = {
   save: async ({ children }) => {
     try {
@@ -41,19 +32,26 @@ const services = {
     }
   },
   getByDate: async ({ order, initDate, endDate }) => {
-    const { timestampInitDate, timestampEndDate } = formatDate(
-      initDate,
-      endDate
-    );
-    const postTable = await getRepository('post');
-    const postList = await postTable.query(`
-      SELECT *
-      FROM public.post p
-      WHERE p.create_date >= ${timestampInitDate} 
-      and p.create_date <= ${timestampEndDate}
-      ORDER BY p.${order} DESC
-    `);
-    console.log(postList);
+    try {
+      const postTable = await getRepository('post');
+      const postList = await postTable.query(`
+        SELECT *
+        FROM public.post p
+        WHERE create_date BETWEEN '${initDate}'::date AND '${endDate}'::date
+        ORDER BY p.${order} DESC
+      `);
+      return {
+        code: 200,
+        data: postList,
+        message: 'Sucess',
+      };
+    } catch (error) {
+      return {
+        code: 500,
+        data: [],
+        message: error.message,
+      };
+    }
   },
 };
 
