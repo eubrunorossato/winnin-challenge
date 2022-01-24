@@ -5,16 +5,14 @@ export function validateQuery(req, res, next) {
   const timestampEndDate = new Date(endDate);
   if (path === '/post/by-date') {
     if (timestampInitDate > timestampEndDate) {
-      res.json({
-        code: 500,
+      res.status(500).json({
         data: [],
         message: 'Initial Date must be bigger than end Date',
       });
     }
   }
   if (!order || (order !== 'ups' && order !== 'comments')) {
-    res.json({
-      code: 500,
+    res.status(500).json({
       data: [],
       message: 'Order was specified wrongly or not specified',
     });
