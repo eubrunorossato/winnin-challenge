@@ -11,6 +11,15 @@ function builPostList(data, postList) {
   });
 }
 
+function formatDate(initDate, endDate) {
+  const timestampInitDate = new Date(initDate).get();
+  const timestampEndDate = new Date(endDate).get();
+  return {
+    timestampInitDate,
+    timestampEndDate,
+  };
+}
+
 const services = {
   save: async ({ children }) => {
     try {
@@ -30,6 +39,21 @@ const services = {
         message: 'Error saving on Post Table',
       };
     }
+  },
+  getByDate: async ({ order, initDate, endDate }) => {
+    const { timestampInitDate, timestampEndDate } = formatDate(
+      initDate,
+      endDate
+    );
+    const postTable = await getRepository('post');
+    const postList = await postTable.query(`
+      SELECT *
+      FROM public.post p
+      WHERE p.create_date >= ${timestampInitDate} 
+      and p.create_date <= ${timestampEndDate}
+      ORDER BY p.${order} DESC
+    `);
+    console.log(postList);
   },
 };
 
