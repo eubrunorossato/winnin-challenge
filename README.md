@@ -7,4 +7,8 @@
 5. O .env do projeto está no git somente por facilidade! Estou ciente que não é uma boa pratica de segurança!
 
 # Endpoints
+1. https://localhost:3000/redit/hot/artificial - **GET**
+- Endpoint criado somente para facilitar o desenvolvimento. Responsavél por pegar os posts na API do reddit e salva-los no banco.
+- Não Possui parametros.
 
+2. https://localhost:3000/post/by-date?order=String&initDate=Date&endDate=Date
