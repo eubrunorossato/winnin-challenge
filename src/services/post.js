@@ -11,7 +11,7 @@ function builPostList(data, postList) {
   });
 }
 
-const services = {
+export default {
   save: async ({ children }) => {
     try {
       const postList = [];
@@ -68,5 +68,3 @@ const services = {
     };
   },
 };
-
-export default services;

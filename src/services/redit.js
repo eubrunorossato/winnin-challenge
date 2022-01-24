@@ -1,6 +1,7 @@
 import axios from 'axios';
 import postServices from './post';
-const services = {
+
+export default {
   getPerPeriod: async () => {
     try {
       const { data } = await axios.get(
@@ -18,7 +19,4 @@ const services = {
       };
     }
   },
-  getPerOrder: () => {},
 };
-
-export default services;
