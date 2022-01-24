@@ -27,4 +27,4 @@
 - O primeiro parametro são os segundos, não vejo nescessidade de trocar pra outro numero.
 - O segundo e o terceiro parametro são os minutos e as horas. Mudem-os de acordo com a hora que estiverem testando. Obs: Eu notei um adiatamento de aproximadamente 7 segundos do cronjob pra hora do meu sistema.
 - Exemplo: Caso quando estiverem testando seja 14:03 hrs, coloque a variavel de ambiente para  CRON_JOB_REDDIT='00 04 14 * * *'
-- Quando o cronjob for chamado vc verá um "Started" no terminal e logo em seguida logs da query feita para salvos os posts no banco.
+- Quando o cronjob for chamado vc verá um "Started" no terminal e logo em seguida logs da query feita para salvar os posts no banco.
