@@ -2,10 +2,14 @@ import app from './src/config/express';
 import https from 'https';
 import fs from 'fs';
 import dotenv from 'dotenv';
+import dbConnection from './src/postgres/index';
 
 dotenv.config();
 
-const cb = () => console.log(`Server Running on Port ${process.env.PORT}`);
+const cb = async () => {
+  console.log(`Server Running on Port ${process.env.PORT}`);
+  await dbConnection();
+};
 
 if (process.env.NODE_ENV === 'LOCALHOST') {
   https
