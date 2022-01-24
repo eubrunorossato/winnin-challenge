@@ -16,3 +16,8 @@
 - Parametro order: Obrigatório. Type: String. Values: "ups" ou "comments".
 - Parametro initDate e endDate: Obrigatório. Type: String. Formato: YYYY/MM/DD.
 - Tratamento de erro para ausencia desses parametros, para caso initDate seja maior que endDate e para valores diferentes de "ups" e "comments" em order.
+
+3. https://localhost:3000/post/by-author?order=String - **GET**
+- Endpoint responsavel por trazer uma lista de autores com seus numeros de ups/comments relacionados ao determinado post.
+- Parametro order: Obrigatório. Type: String. Values: "ups" ou "comments".
+- Tratamento de erro caso order seja undefined ou difetente de "ups" ou "comments"
