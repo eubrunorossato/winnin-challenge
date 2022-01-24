@@ -15,3 +15,4 @@
 - Endpoint responsável por pegar os posts dentro de um range de datas e ordena-los de acordo com o parametro passado em order (ups ou comments).
 - Parametro order: Obrigatório. Type: String. Values: "ups" ou "comments".
 - Parametro initDate e endDate: Obrigatório. Type: String. Formato: YYYY/MM/DD.
+- Tratamento de erro para ausencia desses parametros, para caso initDate seja maior que endDate e para valores diferentes de "ups" e "comments" em order.
