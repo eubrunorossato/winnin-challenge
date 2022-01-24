@@ -16,7 +16,7 @@ export default new EntitySchema({
       type: 'varchar',
     },
     create_date: {
-      type: 'int',
+      type: 'timestamp',
     },
     ups: {
       type: 'int',

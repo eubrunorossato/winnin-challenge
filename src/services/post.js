@@ -6,7 +6,7 @@ function builPostList(data, postList) {
     post_title: title,
     author: author_fullname,
     ups,
-    create_date: created,
+    create_date: new Date(created * 1000),
     comments: num_comments,
   });
 }
