@@ -28,3 +28,10 @@
 - O segundo e o terceiro parametro são os minutos e as horas. Mudem-os de acordo com a hora que estiverem testando. Obs: Eu notei um adiatamento de aproximadamente 7 segundos do cronjob pra hora do meu sistema.
 - Exemplo: Caso quando estiverem testando seja 14:03 hrs, coloque a variavel de ambiente para  CRON_JOB_REDDIT='00 04 14 * * *'
 - Quando o cronjob for chamado vc verá um "Started" no terminal e logo em seguida logs da query feita para salvar os posts no banco.
+
+# Testes automatizados.
+
+1. npm run jest. Todas as linhas estão sendo testadas.
+![image](https://user-images.githubusercontent.com/50469701/151025331-eae02bfa-ee05-43e3-bf59-4158bcec6105.png)
+
+
