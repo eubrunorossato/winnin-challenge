@@ -54,17 +54,25 @@ export default {
     }
   },
   getByAuthor: async ({ order }) => {
-    const postTable = await getRepository('post');
-    const postList = await postTable.query(`
-        SELECT p.author,
-        p.${order}
-        FROM public.post p
-        ORDER BY p.${order} DESC
-      `);
-    return {
-      code: 200,
-      data: postList,
-      message: 'Sucess',
-    };
+    try {
+      const postTable = await getRepository('post');
+      const postList = await postTable.query(`
+          SELECT p.author,
+          p.${order}
+          FROM public.post p
+          ORDER BY p.${order} DESC
+        `);
+      return {
+        code: 200,
+        data: postList,
+        message: 'Sucess',
+      };
+    } catch (error) {
+      return {
+        code: 500,
+        data: [],
+        message: error.message,
+      };
+    }
   },
 };
