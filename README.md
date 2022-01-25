@@ -31,7 +31,8 @@
 
 # Testes automatizados.
 
-1. npm run jest. Todas as linhas estão sendo testadas.
+1. Rode npm i (caso ainda não tenha rodado).
+2. npm run jest. Todas as linhas estão sendo testadas.
 ![image](https://user-images.githubusercontent.com/50469701/151025331-eae02bfa-ee05-43e3-bf59-4158bcec6105.png)
 
 
