@@ -15,7 +15,7 @@ export default {
     } catch (error) {
       return {
         code: 500,
-        message: 'Internal Server Error',
+        message: error.message,
       };
     }
   },

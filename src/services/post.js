@@ -27,7 +27,7 @@ export default {
     } catch (error) {
       return {
         code: 500,
-        message: 'Error saving on Post Table',
+        message: error.message,
       };
     }
   },
