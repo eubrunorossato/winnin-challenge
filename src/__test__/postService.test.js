@@ -7,7 +7,7 @@ import dataToSave from './mocks/data.save';
 jest.mock('typeorm');
 
 describe('When get by date method was called', () => {
-  it('It Should return a code 200 and a list on data', async () => {
+  it('It Should return a code 200 and a list on data and a sucess message', async () => {
     getRepository.mockImplementation(() => {
       return {
         query: () => {
@@ -36,7 +36,7 @@ describe('When get by date method was called', () => {
     );
     expect(message).toBe('Sucess');
   });
-  it('It Should return a code 500 and an empty list on data', async () => {
+  it('It Should return a code 500 and an empty list on data and a error message', async () => {
     getRepository.mockImplementation(() => {
       return {
         query: () => {
@@ -56,7 +56,7 @@ describe('When get by date method was called', () => {
 });
 
 describe('When get by author method was called', () => {
-  it('It Should return a code 200 and a list on data', async () => {
+  it('It Should return a code 200, a list on data and a sucess message', async () => {
     getRepository.mockImplementation(() => {
       return {
         query: () => {
@@ -72,7 +72,7 @@ describe('When get by author method was called', () => {
     expect(Object.keys(data)).toContain('author', 'ups');
     expect(message).toBe('Sucess');
   });
-  it('It Should return a code 500 and an empty list on data', async () => {
+  it('It Should return a code 500 and an error message', async () => {
     getRepository.mockImplementation(() => {
       return {
         query: () => {
@@ -88,7 +88,7 @@ describe('When get by author method was called', () => {
 });
 
 describe('When save method was called', () => {
-  it('It Should return a code 201 and a list on data', async () => {
+  it('It Should return a code 201 and a message', async () => {
     getRepository.mockImplementation(() => {
       return {
         save: () => {
@@ -100,7 +100,7 @@ describe('When save method was called', () => {
     expect(code).toBe(201);
     expect(message).toBe('Posts Create on Database');
   });
-  it('It Should return a code 500 and an empty list on data', async () => {
+  it('It Should return a code 500 and an error message', async () => {
     getRepository.mockImplementation(() => {
       return {
         save: () => {

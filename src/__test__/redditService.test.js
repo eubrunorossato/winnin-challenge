@@ -9,7 +9,7 @@ jest.mock('axios');
 jest.mock('../services/post');
 
 describe('When get posts method was called', () => {
-  it('It Should return a code 200 and a list on data', async () => {
+  it('It Should return a code 201 and a success message', async () => {
     axios.get.mockImplementation(() => {
       return {
         data: {
@@ -29,7 +29,7 @@ describe('When get posts method was called', () => {
     expect(code).toBe(201);
     expect(message).toBe('Posts created on Database');
   });
-  it('It Should return a code 500 and an empty list on data', async () => {
+  it('It Should return a code 500 and an error message', async () => {
     axios.get.mockImplementation(() => {
       throw new Error('Error reaching reddit api');
     });
